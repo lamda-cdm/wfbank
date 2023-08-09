@@ -1,0 +1,19 @@
+CREATE TABLE Accounts (
+	accNumber int not null,
+	title varchar(10) not null,
+	firstName varchar(20) not null,
+	middleName varchar(20),
+	lastName varchar(20) not null,
+	fatherName varchar(30) not null,
+	mobile varchar(15) not null,
+	email varchar(25) not null,
+	aadhar varchar(25) not null,
+	dob date not null,
+	residentAddress blob not null,
+	permanentAddress blob not null,
+	occupationDetails blob not null,
+	debitCardRequired boolean not null,
+	netBankingRequired boolena not null,
+	balance decimal not null);
+
+	
