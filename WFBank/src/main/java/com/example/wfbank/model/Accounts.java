@@ -4,11 +4,14 @@ package com.example.wfbank.model;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -59,14 +62,17 @@ public class Accounts {
 	@Column(name="dob", nullable=false)
 	private Date dob;
 	
-	@Column(name="residentAddress", nullable=false)
-	private String residentAddress;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="residentAddress", nullable=false, referencedColumnName= "id")
+	private Address residentAddress;
 	
-	@Column(name="permanentAddress", nullable=false)
-	private String permanentAddress;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="permanentAddress", nullable=false, referencedColumnName= "id")
+	private Address permanentAddress;
 	
-	@Column(name="occupationDetails", nullable=false)
-	private String occupationDetails;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="occupationDetails", nullable=false)
+	private JobDetail occupationDetails;
 	
 	@Column(name="debitCardRequired", nullable=false)
 	private boolean debitCardRequired;
