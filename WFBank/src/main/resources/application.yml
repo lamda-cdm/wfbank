@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3307/hr
+    url: jdbc:mariadb://localhost:3306/bank
     username: root
     password: Password@1
   jpa:
